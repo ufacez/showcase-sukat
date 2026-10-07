@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://localhost/sukat-kalusugan-capstone/public_html/showcase.php -->
+<html lang="en" data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Sukat Kalusugan Showcase</title>
+    <meta name="description" content="Public showcase of Sukat Kalusugan: auto anthropometry kiosk, sensors, and dashboards.">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./index_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./index_files/app.css">
+    <link rel="stylesheet" href="./index_files/showcase.css">
+    <link rel="icon" type="image/svg+xml" href="http://localhost/sukat-kalusugan-capstone/public_html/assets/img/logo/logo_forlight.svg?v=2">
+    <script>
+    (function(){
+        var t=null;
+        try { t=localStorage.getItem("theme"); } catch(e) {}
+        if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)){
+            document.documentElement.setAttribute("data-theme","dark");
+        }
+    })();
+    </script>
+</head>
+<body>
+<main class="sk-showcase">
+
+    <header class="sk-hero sk-hero--dark">
+        <svg class="hero-pattern" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,320 C80,300 120,340 200,260 C260,200 300,220 400,140"></path>
+            <path d="M0,360 C90,330 140,370 220,300 C280,250 330,270 400,190"></path>
+            <path d="M0,280 C70,260 110,300 190,220 C250,160 290,180 400,100"></path>
+        </svg>
+        <img class="sk-hero-logo" src="./index_files/logo_fordark.svg" data-logo-light="assets/img/logo/logo_forlight.svg?v=2" data-logo-dark="assets/img/logo/logo_fordark.svg?v=2" alt="Sukat Kalusugan logo">
+        <h1 class="sk-hero-title">
+            <img class="sk-hero-logotext" src="./index_files/logotext_fordark.svg" data-logo-light="assets/img/logo/logotext_forlight.svg?v=2" data-logo-dark="assets/img/logo/logotext_fordark.svg?v=2" alt="Sukat Kalusugan">
+        </h1>
+        <p class="sk-hero-tagline">Tamang <span class="hl">Sukat</span>, Gabay sa wastong <span class="hl">Kalusugan</span>.</p>
+        <p class="sub">A Smart Kiosk-Based Anthropometric Monitoring System with a Web Application for the City Health Office in the City of San Fernando, Pampanga</p>
+    </header>
+
+        <section class="sk-section sk-feature" id="problem">
+        <div class="sk-split">
+            <div class="sk-copy">
+                <p class="eyebrow">Why we built this</p>
+                <h2>The Problem</h2>
+                <p class="lead">The eOPT Plus program still depends on manual logging and paper-based records for monthly and quarterly growth monitoring. Even with careful measuring, tracking this data by hand makes reporting slow, consolidation error-prone, and growth history hard for both nutritionists and parents to follow over time.</p>
+                            </div>
+            <div class="sk-side">
+                <div class="sk-feature-visuals">
+                                                                        <div class="sk-feature-cell">
+                                <img src="./index_files/problem-01.jpg" alt="Paper OPT form used during manual growth monitoring" loading="lazy" draggable="false">
+                            </div>
+                                                                                                <div class="sk-feature-cell">
+                                <img src="./index_files/problem-02.jpg" alt="Manual weighing of a child on a platform scale" loading="lazy" draggable="false">
+                            </div>
+                                                                                                <div class="sk-feature-cell">
+                                <img src="./index_files/problem-03.jpg" alt="Manual height measuring with a tape or stadiometer" loading="lazy" draggable="false">
+                            </div>
+                                                            </div>
+            </div>
+        </div>
+                            <div class="sk-feature-follow">
+                                                    <h3>The solution</h3>
+                                <p>To solve this, the team built an automatic measurement kiosk that logs height and weight directly into the system, following the WHO Child Growth Standards and the eOPT Plus program guidelines. This replaces manual paper logging with centralized, real-time records making reporting faster and giving parents, nutritionists, and administrators a clear, consistent view of each child's growth history.</p>
+            </div>
+            </section>
+    
+    <section class="sk-section sk-feature" id="meet-kiosk">
+        <p class="eyebrow">Meet the kiosk</p>
+        <h2>What's inside</h2>
+        <p class="lead">Tap a marker to learn about that part.</p>
+        <div class="sk-hotspot-stage" id="kioskStage">
+            <img src="./index_files/kiosk-unit.png" alt="Sukat Kalusugan kiosk unit — height pole, screen, weighing platform" loading="lazy" draggable="false">
+            <button class="sk-hotspot" type="button" style="--hx:50%;--hy:4%;" data-part="1" aria-expanded="false" aria-label="Part 1: TF-Luna LiDAR sensor">1</button>
+            <button class="sk-hotspot" type="button" style="--hx:50%;--hy:26%;" data-part="2" aria-expanded="false" aria-label="Part 2: Tablet Kiosk screen">2</button>
+            <button class="sk-hotspot" type="button" style="--hx:64%;--hy:31%;" data-part="3" aria-expanded="false" aria-label="Part 3: ESP32 microcontroller">3</button>
+            <button class="sk-hotspot" type="button" style="--hx:50%;--hy:79%;" data-part="4" aria-expanded="false" aria-label="Part 4: Load cells and HX711">4</button>
+            <div class="sk-part-modal" id="kioskModal" hidden="">
+                <div class="sk-part-modal-card" role="dialog" aria-labelledby="kioskModalTitle">
+                    <button class="sk-hotspot-close" id="kioskModalClose" type="button" aria-label="Close part details">×</button>
+                    <div class="sk-part-modal-media">
+                        <img id="kioskModalImg" src="http://localhost/sukat-kalusugan-capstone/public_html/showcase.php" alt="" loading="lazy" draggable="false">
+                        <div class="sk-part-modal-ph" id="kioskModalPh" hidden="">
+                            <b>Part photo placeholder</b>
+                            <small>Add <code id="kioskModalPhFile"></code></small>
+                        </div>
+                    </div>
+                    <h3 id="kioskModalTitle"></h3>
+                    <div class="sk-part-stats" id="kioskModalSpecs"></div>
+                    <p id="kioskModalText" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sk-section" id="kiosk">
+        <p class="eyebrow">Kiosk process</p>
+        <h2>At the kiosk</h2>
+        <p class="lead">Watch a full session in seconds from Start to End of kiosk interactive display.</p>
+        <div class="sk-split">
+            <div class="sk-side">
+                <div class="sk-video-wrap">
+                                            <video src="assets/video/kiosk-demo.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="Kiosk walkthrough video"></video>
+                                    </div>
+            </div>
+            <div class="sk-copy">
+                <ol class="sk-steps">
+                                            <li>
+                            <span class="sk-step-n">1</span>
+                            <div>
+                                <strong>Simulan</strong>
+                                <small>Checks the clock and connection, then waits for a tap on Simulan.</small>
+                            </div>
+                        </li>
+                                            <li>
+                            <span class="sk-step-n">2</span>
+                            <div>
+                                <strong>Find the child</strong>
+                                <small>Search by ID or name and confirm the record scoped to the kiosk's barangay.</small>
+                            </div>
+                        </li>
+                                            <li>
+                            <span class="sk-step-n">3</span>
+                            <div>
+                                <strong>Live height + weight</strong>
+                                <small>TF-Luna reads height, the load cell reads weight. Stability bars turn green when it's ready to process.</small>
+                            </div>
+                        </li>
+                                            <li>
+                            <span class="sk-step-n">4</span>
+                            <div>
+                                <strong>Resulta</strong>
+                                <small>Shows weight, height, and WHO status, then syncs straight to the dashboards.</small>
+                            </div>
+                        </li>
+                                    </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="sk-section sk-features" id="features">
+        <p class="eyebrow">The Web App</p>
+        <h2>What Sukat Kalusugan can do</h2>
+        <p class="lead">Take a look around. Tap any screen to see it bigger.</p>
+
+        <div class="sk-feat-track" id="skFeatTrack" tabindex="0" role="group" aria-label="Feature highlights, swipe sideways to browse">
+                            <article class="sk-feat-card is-active">
+                    <div class="sk-feat-media is-phone">
+                                                    <img src="./index_files/feature-kali.jpg" alt="Kali AI chat answering a question about a child’s growth" draggable="false">
+                                            </div>
+                    <div class="sk-feat-body">
+                        <h3>Ask Kali, anytime.</h3>
+                        <p>Quick answers about a child’s growth, based on their own measurement history.</p>
+                    </div>
+                </article>
+                            <article class="sk-feat-card">
+                    <div class="sk-feat-media">
+                                                    <img src="./index_files/feature-who.jpg" alt="WHO growth analysis with weight, height, and nutritional status per child" draggable="false">
+                                            </div>
+                    <div class="sk-feat-body">
+                        <h3>WHO Child Growth Standards.</h3>
+                        <p>Every child is measured and classified against the international WHO standard, covering WFA, HFA, and WFH.</p>
+                    </div>
+                </article>
+                            <article class="sk-feat-card">
+                    <div class="sk-feat-media">
+                                                    <img src="./index_files/feature-monitoring.jpg" alt="Monthly and quarterly growth monitoring summary" loading="lazy" draggable="false">
+                                            </div>
+                    <div class="sk-feat-body">
+                        <h3>Monthly and quarterly, automatic.</h3>
+                        <p>Growth monitoring is tracked every month and quarter on its own, with no paper logs or manual tallying.</p>
+                    </div>
+                </article>
+                            <article class="sk-feat-card">
+                    <div class="sk-feat-media">
+                                                    <img src="./index_files/feature-reports.jpg" alt="eOPT form report export page" loading="lazy" draggable="false">
+                                            </div>
+                    <div class="sk-feat-body">
+                        <h3>Reports that match eOPT forms.</h3>
+                        <p>Ready-to-submit exports, with no retyping from paper lists.</p>
+                    </div>
+                </article>
+                            <article class="sk-feat-card">
+                    <div class="sk-feat-media">
+                                                    <img src="./index_files/feature-kiosks.jpg" alt="Admin map showing kiosk status across barangays" loading="lazy" draggable="false">
+                                            </div>
+                    <div class="sk-feat-body">
+                        <h3>Every kiosk, one glance.</h3>
+                        <p>See which kiosks are online across every barangay in real time.</p>
+                    </div>
+                </article>
+                            <article class="sk-feat-card">
+                    <div class="sk-feat-media is-phone">
+                                                    <img src="./index_files/feature-growth.jpg" alt="Parent dashboard with a child’s weight and height history chart" loading="lazy" draggable="false">
+                                            </div>
+                    <div class="sk-feat-body">
+                        <h3>Growth, over time.</h3>
+                        <p>Weight and height history for your child, all in one view.</p>
+                    </div>
+                </article>
+                    </div>
+
+        <div class="sk-deck-ctrl sk-feat-ctrl">
+            <div class="sk-dots" id="skFeatDots"><button type="button" aria-label="Go to feature 1" aria-current="true"></button><button type="button" aria-label="Go to feature 2" aria-current="false"></button><button type="button" aria-label="Go to feature 3" aria-current="false"></button><button type="button" aria-label="Go to feature 4" aria-current="false"></button><button type="button" aria-label="Go to feature 5" aria-current="false"></button><button type="button" aria-label="Go to feature 6" aria-current="false"></button></div>
+        </div>
+    </section>
+
+        <section class="sk-section" id="hardware">
+        <p class="eyebrow">Under the hood</p>
+        <h2>Hardware &amp; software</h2>
+        <p class="lead">Follow one measurement from the kiosk to the web app. Tap a step to see what's inside.</p>
+
+        <div class="sk-flow" id="skFlow">
+                                            <button class="sk-flow-node is-on" type="button" data-step="0" aria-pressed="true" aria-controls="skFlowPanel0">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="8 18 12 22 16 18"></polyline><polyline points="8 6 12 2 16 6"></polyline><line x1="12" y1="2" x2="12" y2="22"></line></svg>
+                    <b>Sensors</b>
+                    <small>Measure</small>
+                </button>
+                            <span class="sk-flow-link" aria-hidden="true"><i style="animation-delay:0s"></i></span>                <button class="sk-flow-node" type="button" data-step="1" aria-pressed="false" aria-controls="skFlowPanel1">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"></rect><rect x="10" y="10" width="4" height="4"></rect><line x1="9" y1="2" x2="9" y2="6"></line><line x1="15" y1="2" x2="15" y2="6"></line><line x1="9" y1="18" x2="9" y2="22"></line><line x1="15" y1="18" x2="15" y2="22"></line><line x1="2" y1="9" x2="6" y2="9"></line><line x1="2" y1="15" x2="6" y2="15"></line><line x1="18" y1="9" x2="22" y2="9"></line><line x1="18" y1="15" x2="22" y2="15"></line></svg>
+                    <b>ESP32</b>
+                    <small>Process</small>
+                </button>
+                            <span class="sk-flow-link" aria-hidden="true"><i style="animation-delay:0.8s"></i></span>                <button class="sk-flow-node" type="button" data-step="2" aria-pressed="false" aria-controls="skFlowPanel2">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                    <b>Firebase</b>
+                    <small>Relay</small>
+                </button>
+                            <span class="sk-flow-link" aria-hidden="true"><i style="animation-delay:1.6s"></i></span>                <button class="sk-flow-node" type="button" data-step="3" aria-pressed="false" aria-controls="skFlowPanel3">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    <b>Web app</b>
+                    <small>Record</small>
+                </button>
+                    </div>
+
+        <div class="sk-flow-panels">
+                            <div class="sk-flow-panel" id="skFlowPanel0">
+                    <h3>Sensors on the kiosk</h3>
+                    <dl class="hw-table">
+                                                    <div><dt>Height sensor</dt><dd>TF-Luna LiDAR</dd></div>
+                                                    <div><dt>Weight sensors</dt><dd>4× 50kg load cells + HX711 amp</dd></div>
+                                            </dl>
+                </div>
+                            <div class="sk-flow-panel" id="skFlowPanel1" hidden="">
+                    <h3>ESP32 reads and checks</h3>
+                    <dl class="hw-table">
+                                                    <div><dt>Microcontroller</dt><dd>ESP32</dd></div>
+                                                    <div><dt>Reading method</dt><dd>10 raw samples, stable snapshot</dd></div>
+                                            </dl>
+                </div>
+                            <div class="sk-flow-panel" id="skFlowPanel2" hidden="">
+                    <h3>Firebase passes it along</h3>
+                    <dl class="hw-table">
+                                                    <div><dt>Transport</dt><dd>HTTPS → Firebase Realtime DB</dd></div>
+                                                    <div><dt>Live bridge</dt><dd>Firebase (transient only)</dd></div>
+                                            </dl>
+                </div>
+                            <div class="sk-flow-panel" id="skFlowPanel3" hidden="">
+                    <h3>Web app stores and shows it</h3>
+                    <dl class="hw-table">
+                                                    <div><dt>Backend</dt><dd>PHP + MySQL</dd></div>
+                                                    <div><dt>Frontend</dt><dd>Vanilla HTML / CSS / JS</dd></div>
+                                                    <div><dt>Hosting</dt><dd>Azure Virtual Machine</dd></div>
+                                                    <div><dt>Auth</dt><dd>bcrypt hashing, AES-256-GCM PII encryption, prepared statements</dd></div>
+                                            </dl>
+                </div>
+                    </div>
+
+        <div class="sk-flow-stats">
+                            <div class="sk-flow-stat">
+                    <span class="sk-flow-stat-label">Samples per reading</span>
+                    <span class="sk-flow-stat-num" data-value="10" data-suffix="">10</span>
+                </div>
+                            <div class="sk-flow-stat">
+                    <span class="sk-flow-stat-label">Load cells</span>
+                    <span class="sk-flow-stat-num" data-value="4" data-suffix="">4</span>
+                </div>
+                            <div class="sk-flow-stat">
+                    <span class="sk-flow-stat-label">Sensor mount</span>
+                    <span class="sk-flow-stat-num" data-value="150" data-suffix=" cm">150 cm</span>
+                </div>
+                            <div class="sk-flow-stat">
+                    <span class="sk-flow-stat-label">Stable snapshot</span>
+                    <span class="sk-flow-stat-num" data-value="1" data-suffix="">1</span>
+                </div>
+                    </div>
+
+        <details class="sk-fullspecs">
+            <summary>Full specs</summary>
+    <div class="sk-spec-grid">
+                <div class="sk-spec">
+                    <h3>Hardware</h3>
+                    <dl class="hw-table">
+                        <div><dt>Microcontroller</dt><dd>ESP32</dd></div>
+                        <div><dt>Height sensor</dt><dd>TF-Luna LiDAR</dd></div>
+                        <div><dt>Weight sensors</dt><dd>4× 50kg load cells + HX711 amp</dd></div>
+                        <div><dt>Reading method</dt><dd>10 raw samples, stable snapshot</dd></div>
+                        <div><dt>Transport</dt><dd>HTTPS → Firebase Realtime DB</dd></div>
+                    </dl>
+                </div>
+                <div class="sk-spec">
+                    <h3>Software &amp; hosting</h3>
+                    <dl class="hw-table">
+                        <div><dt>Backend</dt><dd>PHP + MySQL</dd></div>
+                        <div><dt>Frontend</dt><dd>Vanilla HTML / CSS / JS</dd></div>
+                        <div><dt>Live bridge</dt><dd>Firebase (transient only)</dd></div>
+                        <div><dt>Hosting</dt><dd>Azure Virtual Machine</dd></div>
+                        <div><dt>Auth</dt><dd>bcrypt hashing, AES-256-GCM PII encryption, prepared statements</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </details>
+    </section>
+
+        <section class="sk-section" id="team">
+        <p class="eyebrow">The team</p>
+        <h2>The people behind Sukat Kalusugan</h2>
+
+        <div class="sk-members">
+                            <div class="sk-member">
+                    <div class="sk-member-av">
+                                                    <img src="./index_files/member-01.jpg" alt="Shekainah Gonzales" loading="lazy" draggable="false">
+                                            </div>
+                                            <p class="sk-member-name">Shekainah Gonzales</p>
+                        <p class="sk-member-role">Principal investigator</p>
+                                    </div>
+                            <div class="sk-member">
+                    <div class="sk-member-av">
+                                                    <img src="./index_files/member-02.jpg" alt="Ean Paolo Espiritu" loading="lazy" draggable="false">
+                                            </div>
+                                            <p class="sk-member-name">Ean Paolo Espiritu</p>
+                        <p class="sk-member-role">Developer</p>
+                                    </div>
+                            <div class="sk-member">
+                    <div class="sk-member-av">
+                                                    <img src="./index_files/member-03.jpg" alt="Christian Rulloda" loading="lazy" draggable="false">
+                                            </div>
+                                            <p class="sk-member-name">Christian Rulloda</p>
+                        <p class="sk-member-role">Hardware specialist</p>
+                                    </div>
+                            <div class="sk-member">
+                    <div class="sk-member-av">
+                                                    <img src="./index_files/member-04.jpg" alt="Laurence Tapang" loading="lazy" draggable="false">
+                                            </div>
+                                            <p class="sk-member-name">Laurence Tapang</p>
+                        <p class="sk-member-role">Hardware specialist</p>
+                                    </div>
+                    </div>
+
+        <div class="sk-build">
+            <h3>How we built it</h3>
+            <p class="lead">Photos from the build. Tap one to see it bigger.</p>
+            <div class="sk-deck-wrap">
+                <div class="sk-deck" id="teamDeck">
+                    <div class="sk-deck-track" style="transform: translateX(0%);">
+                                                                                                                <div class="sk-card">
+                                    <img src="./index_files/team-01.jpg" alt="Wiring the Sensors" loading="lazy">
+                                    <span class="sk-card-cap">Wiring the Sensors</span>                                </div>
+                                                                                                                                            <div class="sk-card">
+                                    <img src="./index_files/team-02.jpg" alt="Calibrating the Load Cell" loading="lazy">
+                                    <span class="sk-card-cap">Calibrating the Load Cell</span>                                </div>
+                                                                                                                                            <div class="sk-card">
+                                    <img src="./index_files/team-03.jpg" alt="Finishing Touches on the Kiosk" loading="lazy">
+                                    <span class="sk-card-cap">Finishing Touches on the Kiosk</span>                                </div>
+                                                                                                                                            <div class="sk-card">
+                                    <img src="./index_files/team-04.jpg" alt="Initial Kiosk Design" loading="lazy">
+                                    <span class="sk-card-cap">Initial Kiosk Design</span>                                </div>
+                                                                                                                                            <div class="sk-card">
+                                    <img src="./index_files/team-05.jpg" alt="Kiosk at the Barangay Health Center" loading="lazy">
+                                    <span class="sk-card-cap">Kiosk at the Barangay Health Center</span>                                </div>
+                                                                        </div>
+                </div>
+                <div class="sk-deck-ctrl">
+                    <button class="sk-arrow" id="teamPrev" type="button" aria-label="Previous photo">←</button>
+                    <div class="sk-dots" id="teamDots"><button type="button" aria-label="Go to photo 1" aria-current="true"></button><button type="button" aria-label="Go to photo 2" aria-current="false"></button><button type="button" aria-label="Go to photo 3" aria-current="false"></button><button type="button" aria-label="Go to photo 4" aria-current="false"></button><button type="button" aria-label="Go to photo 5" aria-current="false"></button></div>
+                    <button class="sk-arrow" id="teamNext" type="button" aria-label="Next photo">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer style="text-align:center;padding:1.2rem .8rem 1.6rem;font-size:.8rem;color:#64748b;line-height:1.7;">
+    Student capstone by <strong>Group A4Tech</strong> (Our Lady of Fatima University) — not an official City Health Office system. No public registration.<br>
+    <a href="http://localhost/sukat-kalusugan-capstone/public_html/about.php" style="color:inherit;">About</a> · <a href="http://localhost/sukat-kalusugan-capstone/public_html/privacy.php" style="color:inherit;">Privacy</a> · <a href="http://localhost/sukat-kalusugan-capstone/public_html/terms.php" style="color:inherit;">Terms</a> · <a href="http://localhost/sukat-kalusugan-capstone/public_html/contact.php" style="color:inherit;">Contact</a> — espirituean@gmail.com / 09614730364, Philippines.
+</footer>
+
+<div class="sk-lightbox" id="skLightbox" hidden="">
+    <div class="sk-lightbox-backdrop" id="skLbBackdrop"></div>
+    <figure class="sk-lightbox-fig" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+        <img id="skLbImg" src="http://localhost/sukat-kalusugan-capstone/public_html/showcase.php" alt="Enlarged showcase photo">
+        <figcaption id="skLbCap"></figcaption>
+    </figure>
+    <button class="sk-lb-btn sk-lb-close" id="skLbClose" type="button" aria-label="Close enlarged view">×</button>
+    <button class="sk-lb-btn sk-lb-prev" id="skLbPrev" type="button" aria-label="Previous photo">←</button>
+    <button class="sk-lb-btn sk-lb-next" id="skLbNext" type="button" aria-label="Next photo">→</button>
+</div>
+
+<script src="./index_files/showcase.js.download" defer=""></script>
+
+</body></html>
